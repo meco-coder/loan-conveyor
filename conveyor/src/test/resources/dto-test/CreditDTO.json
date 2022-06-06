@@ -1,0 +1,59 @@
+{
+  "amount": 100000,
+  "term": 6,
+  "monthlyPayment": 17281.58,
+  "rate": 7,
+  "psk": 4.10,
+  "isInsuranceEnabled": true,
+  "isSalaryClient": true,
+  "paymentSchedule": [
+    {
+      "number": 1,
+      "date": "2022-06-30",
+      "totalPayment": 17281.58,
+      "interestPayment": 592.70,
+      "debtPayment": 16688.88,
+      "remainingDebt": 84916.12
+    },
+    {
+      "number": 2,
+      "date": "2022-07-31",
+      "totalPayment": 17281.58,
+      "interestPayment": 495.34,
+      "debtPayment": 16786.24,
+      "remainingDebt": 68129.88
+    },
+    {
+      "number": 3,
+      "date": "2022-08-31",
+      "totalPayment": 17281.58,
+      "interestPayment": 397.42,
+      "debtPayment": 16884.16,
+      "remainingDebt": 51245.72
+    },
+    {
+      "number": 4,
+      "date": "2022-09-30",
+      "totalPayment": 17281.58,
+      "interestPayment": 298.93,
+      "debtPayment": 16982.65,
+      "remainingDebt": 34263.07
+    },
+    {
+      "number": 5,
+      "date": "2022-10-31",
+      "totalPayment": 17281.58,
+      "interestPayment": 199.87,
+      "debtPayment": 17081.71,
+      "remainingDebt": 17181.36
+    },
+    {
+      "number": 6,
+      "date": "2022-11-30",
+      "totalPayment": 17281.58,
+      "interestPayment": 100.22,
+      "debtPayment": 17181.36,
+      "remainingDebt": 0.00
+    }
+  ]
+}

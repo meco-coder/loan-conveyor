@@ -1,0 +1,8 @@
+
+task start {
+    dependsOn gradle.includedBuild('conveyor').task(':bootRun')
+}
+
+task test {
+    dependsOn gradle.includedBuild('conveyor').task(':test')
+}

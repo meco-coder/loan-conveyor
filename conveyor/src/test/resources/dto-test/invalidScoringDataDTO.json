@@ -1,0 +1,26 @@
+{
+  "amount": "100000",
+  "term": "6",
+  "firstName": "Maxim",
+  "lastName": "Ivanov",
+  "middleName": "Ivanovich",
+  "gender": "male",
+  "birthdate": "1901-11-11",
+  "passportSeries": "1111",
+  "passportNumber": "222222",
+  "passportIssueDate": "2001-01-20",
+  "passportIssueBranch": "UFMS Saratov",
+  "maritalStatus": "notMarried",
+  "dependentAmount": "1",
+  "employment": {
+    "employmentStatus": "unemployed",
+    "employerINN": "123123123123",
+    "salary": "1000",
+    "position": "middleManager",
+    "workExperienceTotal": "10",
+    "workExperienceCurrent": "2"
+  },
+  "account": "1233123213123",
+  "isInsuranceEnabled": "true",
+  "isSalaryClient": "true"
+}
