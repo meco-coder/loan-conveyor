@@ -1,0 +1,15 @@
+server:
+  port: ${PORT:5000}
+
+base-url: /api
+
+base-rate: 14
+
+logging:
+  level:
+    root: INFO
+    web: DEBUG
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
