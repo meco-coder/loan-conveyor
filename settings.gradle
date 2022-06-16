@@ -10,3 +10,5 @@
 rootProject.name = 'loan-conveyor'
 
 includeBuild 'conveyor'
+
+includeBuild 'deal'
