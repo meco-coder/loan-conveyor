@@ -12,6 +12,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,9 +50,11 @@ public class ConveyorController {
             @ApiResponse(responseCode = "400", description = "Invalid LoanApplicationRequestDTO")
     })
     @PostMapping(OFFERS)
-    public List<LoanOfferDTO> getLoanOfferDTOList(@RequestBody @Valid final LoanApplicationRequestDTO dto) {
+    public ResponseEntity<List<LoanOfferDTO>> getLoanOfferDTOList(@RequestBody
+                                                                      @Valid final LoanApplicationRequestDTO dto) {
         log.info("input data: " + dto.toString());
-        return loanOfferService.getLoanOffers(dto);
+        return ResponseEntity.ok()
+                .body( loanOfferService.getLoanOffers(dto));
     }
 
     @Operation(summary = "Get CreditDTO")
@@ -61,7 +64,8 @@ public class ConveyorController {
             @ApiResponse(responseCode = "400", description = "Invalid ScoringDataDTO")
     })
     @PostMapping(CALCULATION)
-    public CreditDTO getCreditDTO(@RequestBody @Valid final ScoringDataDTO dto) {
-        return creditService.getCreditDTO(dto);
+    public ResponseEntity<CreditDTO> getCreditDTO(@RequestBody @Valid final ScoringDataDTO dto) {
+        return ResponseEntity.ok()
+                .body( creditService.getCreditDTO(dto));
     }
 }

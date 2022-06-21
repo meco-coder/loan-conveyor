@@ -4,7 +4,6 @@ package code.util;
 import code.dto.LoanApplicationRequestDTO;
 import code.dto.LoanOfferDTO;
 import com.fasterxml.jackson.core.type.TypeReference;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 
