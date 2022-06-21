@@ -170,6 +170,8 @@ public class CreditService {
         log.info("rateCalculationWithIsInsuranceEnabledAndIsSalaryClient method end");
     }
 
+//    Расчет ПСК производился по формуле
+//    из данного источника: https://temabiz.com/finterminy/psk-uproshhennyj-raschet.html
     private BigDecimal calculationPSK(final BigDecimal monthlyPayment, final BigDecimal totalAmount,
                                       final Integer term) {
         log.info("calculationPSK method start");

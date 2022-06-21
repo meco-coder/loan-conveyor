@@ -6,5 +6,8 @@ public enum Gender {
     @JsonProperty("male")
     MALE,
     @JsonProperty("female")
-    FEMALE
+    FEMALE,
+
+    @JsonProperty("nonBinary")
+    NON_BINARY
 }

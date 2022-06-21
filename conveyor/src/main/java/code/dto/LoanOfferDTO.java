@@ -17,8 +17,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @AllArgsConstructor
 @Builder
 public class LoanOfferDTO {
-    @Id
-    @GeneratedValue(strategy = IDENTITY)
+
     private Long applicationId;
 
     private BigDecimal totalAmount;
