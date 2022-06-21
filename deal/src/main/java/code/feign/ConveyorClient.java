@@ -5,6 +5,7 @@ import code.dto.LoanApplicationRequestDTO;
 import code.dto.LoanOfferDTO;
 import code.dto.ScoringDataDTO;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -14,8 +15,8 @@ import java.util.List;
 public interface ConveyorClient {
 
     @PostMapping("${base-url}/conveyor/offers")
-    List<LoanOfferDTO> getLoanOfferDTOList(@RequestBody LoanApplicationRequestDTO dto);
+    ResponseEntity<List<LoanOfferDTO>> getLoanOfferDTOList(@RequestBody LoanApplicationRequestDTO dto);
 
     @PostMapping("${base-url}/conveyor/calculation")
-    CreditDTO getCreditDTO(@RequestBody ScoringDataDTO dto);
+    ResponseEntity<CreditDTO> getCreditDTO(@RequestBody ScoringDataDTO dto);
 }

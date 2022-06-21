@@ -13,6 +13,6 @@ public class WireMockConfig {
 
     @Bean(initMethod = "start", destroyMethod = "stop")
     public WireMockServer mockConveyorService() {
-        return new WireMockServer(5000);
+        return new WireMockServer(8080);
     }
 }
