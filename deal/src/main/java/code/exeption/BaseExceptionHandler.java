@@ -20,8 +20,7 @@ public class BaseExceptionHandler extends ResponseEntityExceptionHandler {
                                                                   HttpHeaders headers,
                                                                   HttpStatus status,
                                                                   WebRequest request) {
-        JsonMappingException jme = (JsonMappingException) ex.getCause();
-            return new ResponseEntity<>(jme.getMessage() + " invalid", BAD_REQUEST);
+        return ResponseEntity.badRequest().body(ex.getMessage());
 
     }
 }
