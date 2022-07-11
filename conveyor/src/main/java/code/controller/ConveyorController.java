@@ -50,8 +50,7 @@ public class ConveyorController {
             @ApiResponse(responseCode = "400", description = "Invalid LoanApplicationRequestDTO")
     })
     @PostMapping(OFFERS)
-    public ResponseEntity<List<LoanOfferDTO>> getLoanOfferDTOList(@RequestBody
-                                                                      @Valid final LoanApplicationRequestDTO dto) {
+    public ResponseEntity<List<LoanOfferDTO>> getLoanOfferDTOList(@RequestBody final LoanApplicationRequestDTO dto) {
         log.info("input data: " + dto.toString());
         return ResponseEntity.ok()
                 .body( loanOfferService.getLoanOffers(dto));
