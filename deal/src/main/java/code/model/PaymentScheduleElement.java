@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -27,4 +29,8 @@ public class PaymentScheduleElement {
     private BigDecimal interestPayment;
     private BigDecimal debtPayment;
     private BigDecimal remainingDebt;
+    @ManyToOne
+    @JoinColumn(name = "credit_id")
+    private Credit credit;
+
 }

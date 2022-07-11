@@ -53,6 +53,6 @@ public class Application {
     private LoanOffer appliedOffer;
     private LocalDate signDate;
     private String sesCode;
-    @OneToMany
+    @OneToMany(mappedBy = "application")
     private List<ApplicationStatusHistory> statusHistory;
 }

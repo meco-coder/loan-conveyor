@@ -1,6 +1,6 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
-<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
-    <changeSet author="ivan (generated)" id="1655103492065-1">
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <changeSet author="ivan (generated)" id="1657534651632-1">
         <createTable tableName="additional_services">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="additional_servicesPK"/>
@@ -9,17 +9,7 @@
             <column name="is_salary_client" type="BOOLEAN"/>
         </createTable>
     </changeSet>
-    <changeSet author="ivan (generated)" id="1655103492065-2">
-        <createTable tableName="application_status_histories">
-            <column autoIncrement="true" name="id" type="BIGINT">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="application_status_historiesPK"/>
-            </column>
-            <column name="change_type" type="VARCHAR(255)"/>
-            <column name="status" type="VARCHAR(255)"/>
-            <column name="time" type="TIMESTAMP WITHOUT TIME ZONE"/>
-        </createTable>
-    </changeSet>
-    <changeSet author="ivan (generated)" id="1655103492065-3">
+    <changeSet author="ivan (generated)" id="1657534651632-2">
         <createTable tableName="applications">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="applicationsPK"/>
@@ -33,17 +23,18 @@
             <column name="credit_id" type="BIGINT"/>
         </createTable>
     </changeSet>
-    <changeSet author="ivan (generated)" id="1655103492065-4">
-        <createTable tableName="applications_application_status_histories">
-            <column name="application_id" type="BIGINT">
-                <constraints nullable="false"/>
+    <changeSet author="ivan (generated)" id="1657534651632-3">
+        <createTable tableName="applications_status_history">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="applications_status_historyPK"/>
             </column>
-            <column name="status_history_id" type="BIGINT">
-                <constraints nullable="false"/>
-            </column>
+            <column name="change_type" type="VARCHAR(255)"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="time" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="application_id" type="BIGINT"/>
         </createTable>
     </changeSet>
-    <changeSet author="ivan (generated)" id="1655103492065-5">
+    <changeSet author="ivan (generated)" id="1657534651632-4">
         <createTable tableName="clients">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="clientsPK"/>
@@ -61,7 +52,7 @@
             <column name="passport_id" type="BIGINT"/>
         </createTable>
     </changeSet>
-    <changeSet author="ivan (generated)" id="1655103492065-6">
+    <changeSet author="ivan (generated)" id="1657534651632-5">
         <createTable tableName="credits">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="creditsPK"/>
@@ -75,17 +66,7 @@
             <column name="additional_services_id" type="BIGINT"/>
         </createTable>
     </changeSet>
-    <changeSet author="ivan (generated)" id="1655103492065-7">
-        <createTable tableName="credits_payment_schedule_elements">
-            <column name="credit_id" type="BIGINT">
-                <constraints nullable="false"/>
-            </column>
-            <column name="payment_schedule_id" type="BIGINT">
-                <constraints nullable="false"/>
-            </column>
-        </createTable>
-    </changeSet>
-    <changeSet author="ivan (generated)" id="1655103492065-8">
+    <changeSet author="ivan (generated)" id="1657534651632-6">
         <createTable tableName="employments">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="employmentsPK"/>
@@ -98,7 +79,7 @@
             <column name="work_experience_total" type="INTEGER"/>
         </createTable>
     </changeSet>
-    <changeSet author="ivan (generated)" id="1655103492065-9">
+    <changeSet author="ivan (generated)" id="1657534651632-7">
         <createTable tableName="loan_offers">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="loan_offersPK"/>
@@ -112,7 +93,7 @@
             <column name="total_amount" type="numeric(19, 2)"/>
         </createTable>
     </changeSet>
-    <changeSet author="ivan (generated)" id="1655103492065-10">
+    <changeSet author="ivan (generated)" id="1657534651632-8">
         <createTable tableName="passports">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="passportsPK"/>
@@ -123,7 +104,7 @@
             <column name="passport_series" type="VARCHAR(255)"/>
         </createTable>
     </changeSet>
-    <changeSet author="ivan (generated)" id="1655103492065-11">
+    <changeSet author="ivan (generated)" id="1657534651632-9">
         <createTable tableName="payment_schedule_elements">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="payment_schedule_elementsPK"/>
@@ -134,42 +115,31 @@
             <column name="number" type="INTEGER"/>
             <column name="remaining_debt" type="numeric(19, 2)"/>
             <column name="total_payment" type="numeric(19, 2)"/>
+            <column name="credit_id" type="BIGINT"/>
         </createTable>
     </changeSet>
-    <changeSet author="ivan (generated)" id="1655103492065-12">
-        <addUniqueConstraint columnNames="status_history_id" constraintName="UK_atihilnewny1lpxffh33g3lck" tableName="applications_application_status_histories"/>
-    </changeSet>
-    <changeSet author="ivan (generated)" id="1655103492065-13">
-        <addUniqueConstraint columnNames="payment_schedule_id" constraintName="UK_ruorc9byg6sxb6g3nt1qbysno" tableName="credits_payment_schedule_elements"/>
-    </changeSet>
-    <changeSet author="ivan (generated)" id="1655103492065-14">
+    <changeSet author="ivan (generated)" id="1657534651632-10">
         <addForeignKeyConstraint baseColumnNames="applied_offer_id" baseTableName="applications" constraintName="FK2740fo6eeyc37s1ky55qgpfgy" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="loan_offers" validate="true"/>
     </changeSet>
-    <changeSet author="ivan (generated)" id="1655103492065-15">
-        <addForeignKeyConstraint baseColumnNames="credit_id" baseTableName="credits_payment_schedule_elements" constraintName="FK30rnxsfo9k1y45basn78iusyp" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="credits" validate="true"/>
-    </changeSet>
-    <changeSet author="ivan (generated)" id="1655103492065-16">
-        <addForeignKeyConstraint baseColumnNames="application_id" baseTableName="applications_application_status_histories" constraintName="FK5mnc3h1v11t3ug3ddpdxi9s9o" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="applications" validate="true"/>
-    </changeSet>
-    <changeSet author="ivan (generated)" id="1655103492065-17">
+    <changeSet author="ivan (generated)" id="1657534651632-11">
         <addForeignKeyConstraint baseColumnNames="additional_services_id" baseTableName="credits" constraintName="FK6ctodcrfhns3qe7ublq9x9kt6" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="additional_services" validate="true"/>
     </changeSet>
-    <changeSet author="ivan (generated)" id="1655103492065-18">
+    <changeSet author="ivan (generated)" id="1657534651632-12">
         <addForeignKeyConstraint baseColumnNames="credit_id" baseTableName="applications" constraintName="FK7vmbq48b3ctvr2rjyvguca93f" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="credits" validate="true"/>
     </changeSet>
-    <changeSet author="ivan (generated)" id="1655103492065-19">
-        <addForeignKeyConstraint baseColumnNames="status_history_id" baseTableName="applications_application_status_histories" constraintName="FKbs3kfy2o7p469w7s1580sij1s" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="application_status_histories" validate="true"/>
-    </changeSet>
-    <changeSet author="ivan (generated)" id="1655103492065-20">
+    <changeSet author="ivan (generated)" id="1657534651632-13">
         <addForeignKeyConstraint baseColumnNames="client_id" baseTableName="applications" constraintName="FKf0heeugoetqoqkdxmxl06ly6g" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="clients" validate="true"/>
     </changeSet>
-    <changeSet author="ivan (generated)" id="1655103492065-21">
-        <addForeignKeyConstraint baseColumnNames="payment_schedule_id" baseTableName="credits_payment_schedule_elements" constraintName="FKflv5no2rc36g9yofgdk9t0sig" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="payment_schedule_elements" validate="true"/>
+    <changeSet author="ivan (generated)" id="1657534651632-14">
+        <addForeignKeyConstraint baseColumnNames="application_id" baseTableName="applications_status_history" constraintName="FKjlua6suxl7ftk8fn3w7ob75fr" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="applications" validate="true"/>
     </changeSet>
-    <changeSet author="ivan (generated)" id="1655103492065-22">
+    <changeSet author="ivan (generated)" id="1657534651632-15">
+        <addForeignKeyConstraint baseColumnNames="credit_id" baseTableName="payment_schedule_elements" constraintName="FKpf6du6cl377ltloravlohcoj8" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="credits" validate="true"/>
+    </changeSet>
+    <changeSet author="ivan (generated)" id="1657534651632-16">
         <addForeignKeyConstraint baseColumnNames="employment_id" baseTableName="clients" constraintName="FKrj9qhsyk6br2qf1fae49nre3a" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="employments" validate="true"/>
     </changeSet>
-    <changeSet author="ivan (generated)" id="1655103492065-23">
+    <changeSet author="ivan (generated)" id="1657534651632-17">
         <addForeignKeyConstraint baseColumnNames="passport_id" baseTableName="clients" constraintName="FKt1bl0t3m5aw25yqxwusroqtot" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="passports" validate="true"/>
     </changeSet>
 </databaseChangeLog>
