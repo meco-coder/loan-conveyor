@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: application
+  main:
+    allow-circular-references: true
+
+deal:
+  service:
+    url: http://localhost:8081
+
+logging:
+  level:
+    root: INFO
