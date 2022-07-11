@@ -2,9 +2,11 @@
 task start {
     dependsOn gradle.includedBuild('conveyor').task(':bootRun')
     dependsOn gradle.includedBuild('deal').task(':bootRun')
+    dependsOn gradle.includedBuild('application').task(':bootRun')
 }
 
 task test {
     dependsOn gradle.includedBuild('conveyor').task(':test')
     dependsOn gradle.includedBuild('deal').task(':test')
+    dependsOn gradle.includedBuild('application').task(':test')
 }
