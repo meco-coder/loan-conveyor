@@ -41,7 +41,7 @@ public class Credit {
     @OneToOne
     @JoinColumn(name = "additional_services_id")
     private AdditionalServices additionalServices;
-    @OneToMany
+    @OneToMany(mappedBy = "credit")
     private List<PaymentScheduleElement> paymentSchedule;
     @Enumerated(EnumType.STRING)
     private CreditStatus creditStatus;
