@@ -29,15 +29,6 @@ public class TestOfferUtils {
         });
     }
 
-    public LoanApplicationRequestDTO getTestInvalidLoanApplicationRequestDTO() throws IOException {
-        final Path invalidLoanApplicationRequestDTO = Paths
-                .get("src/test/resources/dto-test/invalidLoanApplicationRequestDTO.json")
-                .normalize()
-                .toAbsolutePath();
-        return fromJson(Files.readString(invalidLoanApplicationRequestDTO), new TypeReference<>() {
-        });
-    }
-
     public List<LoanOfferDTO> getTestLoanOfferDTOList() throws IOException {
         final Path invalidLoanApplicationRequestDTO = Paths
                 .get("src/test/resources/dto-test/LoanOffersDTOList.json")

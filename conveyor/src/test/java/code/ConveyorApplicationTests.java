@@ -56,28 +56,6 @@ class ConveyorApplicationTests {
 
     }
 
-    @Test
-    public void testGetLoanOfferDTOListFail() throws Exception {
-        final var responseInvalidLoanApplicationRequestDTO = testUtils
-                .perform(post("/api/conveyor/offers")
-                        .contentType(APPLICATION_JSON)
-                        .content(asJson(testOfferUtils.getTestInvalidLoanApplicationRequestDTO())))
-                .andExpect(status().isBadRequest())
-                .andReturn()
-                .getResponse();
-
-        assertThat(responseInvalidLoanApplicationRequestDTO.getContentAsString())
-                .contains("passportNumber: Need 6 numbers",
-                        "lastName: size from 2 to 30 characters",
-                        "email: invalid email",
-                        "firstName: size from 2 to 30 characters",
-                        "middleName: size from 2 to 30 characters",
-                        "amount: at least 10000",
-                        "term: at least 6",
-                        "passportSeries: Need 4 numbers");
-
-    }
-
 
     @Test
     public void testGetCreditDTO() throws Exception {
