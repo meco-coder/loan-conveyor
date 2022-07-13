@@ -51,6 +51,7 @@ public class LoanOfferService {
             log.info("paymentInMouth calculation");
             BigDecimal paymentInMouth = paymentInMouthCalculation(newRate, dto.getTerm(), totalAmount);
             loanOfferDTO = LoanOfferDTO.builder()
+                    .requestedAmount(dto.getAmount())
                     .isInsuranceEnabled(true)
                     .isSalaryClient(true)
                     .rate(newRate)
@@ -70,6 +71,7 @@ public class LoanOfferService {
             log.info("paymentInMouth calculation");
             final BigDecimal paymentInMouth = paymentInMouthCalculation(newRate, dto.getTerm(), totalAmount);
             loanOfferDTO = LoanOfferDTO.builder()
+                    .requestedAmount(dto.getAmount())
                     .isInsuranceEnabled(false)
                     .isSalaryClient(true)
                     .rate(newRate)
@@ -89,6 +91,7 @@ public class LoanOfferService {
             log.info("paymentInMouth calculation");
             final BigDecimal paymentInMouth = paymentInMouthCalculation(newRate, dto.getTerm(), totalAmount);
             loanOfferDTO = LoanOfferDTO.builder()
+                    .requestedAmount(dto.getAmount())
                     .isInsuranceEnabled(true)
                     .isSalaryClient(false)
                     .rate(newRate)
@@ -105,6 +108,7 @@ public class LoanOfferService {
             log.info("paymentInMouth calculation");
             final BigDecimal paymentInMouth = paymentInMouthCalculation(newRate, dto.getTerm(), totalAmount);
             loanOfferDTO = LoanOfferDTO.builder()
+                    .requestedAmount(dto.getAmount())
                     .isInsuranceEnabled(false)
                     .isSalaryClient(false)
                     .rate(newRate)
