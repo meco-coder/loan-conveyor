@@ -22,6 +22,8 @@ public class LoanOfferDTO {
 
     private BigDecimal totalAmount;
 
+    private BigDecimal requestedAmount;
+
     private Integer term;
 
     private BigDecimal monthlyPayment;
