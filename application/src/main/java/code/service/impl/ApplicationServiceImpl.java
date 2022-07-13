@@ -18,7 +18,6 @@ import java.util.Objects;
 @RequiredArgsConstructor
 public class ApplicationServiceImpl implements ApplicationService {
     private final DealClient dealClient;
-    ;
 
     @Override
     public List<LoanOfferDTO> getLoanOfferList(LoanApplicationRequestDTO dto) {
