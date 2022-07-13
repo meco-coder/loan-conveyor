@@ -28,6 +28,7 @@ public class LoanOffer {
     private long id;
     private Long applicationId;
     private BigDecimal totalAmount;
+    private BigDecimal requestedAmount;
     private Integer term;
     private BigDecimal monthlyPayment;
     private BigDecimal rate;

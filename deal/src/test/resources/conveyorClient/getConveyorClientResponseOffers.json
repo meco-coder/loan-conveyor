@@ -2,6 +2,7 @@
   {
     "applicationId": 2,
     "totalAmount": 152475.00,
+    "requestedAmount": 150000,
     "term": 6,
     "monthlyPayment": 26158.82,
     "rate": 10,
@@ -11,6 +12,7 @@
   {
     "applicationId": 2,
     "totalAmount": 152497.50,
+    "requestedAmount": 150000,
     "term": 6,
     "monthlyPayment": 26237.89,
     "rate": 11,
@@ -20,6 +22,7 @@
   {
     "applicationId": 2,
     "totalAmount": 150000,
+    "requestedAmount": 150000,
     "term": 6,
     "monthlyPayment": 25956.43,
     "rate": 13,
@@ -29,6 +32,7 @@
   {
     "applicationId": 2,
     "totalAmount": 150000,
+    "requestedAmount": 150000,
     "term": 6,
     "monthlyPayment": 26030.70,
     "rate": 14,

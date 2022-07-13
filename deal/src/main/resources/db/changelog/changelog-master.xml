@@ -142,4 +142,9 @@
     <changeSet author="ivan (generated)" id="1657534651632-17">
         <addForeignKeyConstraint baseColumnNames="passport_id" baseTableName="clients" constraintName="FKt1bl0t3m5aw25yqxwusroqtot" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="passports" validate="true"/>
     </changeSet>
+    <changeSet author="ivan (generated)" id="1657716443995-1">
+        <addColumn tableName="loan_offers">
+            <column name="requested_amount" type="numeric(19, 2)"/>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>
