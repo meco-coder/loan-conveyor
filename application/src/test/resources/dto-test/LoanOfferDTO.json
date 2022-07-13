@@ -1,9 +1,10 @@
 {
   "applicationId": 1,
-  "totalAmount": 152475.00,
+  "totalAmount": 101650.00,
+  "requestedAmount": 100000,
   "term": 6,
-  "monthlyPayment": 26158.82,
-  "rate": 10.00,
+  "monthlyPayment": 17439.22,
+  "rate": 10,
   "isInsuranceEnabled": true,
   "isSalaryClient": true
 }

@@ -2,36 +2,28 @@ package code.controller;
 
 import code.dto.LoanApplicationRequestDTO;
 import code.dto.LoanOfferDTO;
-import code.feign.DealClient;
-import code.service.impl.LoanOfferDTOListServiceImpl;
+import code.service.impl.ApplicationServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 import java.util.List;
 
-@RequestMapping("${base-url}/application")
 @RestController
 @Slf4j
+@RequiredArgsConstructor
 public class ApplicationController {
-    private static final String OFFER = "/offer";
-    private final LoanOfferDTOListServiceImpl loanOfferDTOListService;
-    private final DealClient dealClient;
-
-    public ApplicationController(LoanOfferDTOListServiceImpl loanOfferDTOListService, DealClient dealClient) {
-        this.loanOfferDTOListService = loanOfferDTOListService;
-        this.dealClient = dealClient;
-    }
+    private final ApplicationServiceImpl applicationService;
 
     @Operation(summary = "Get LoanOfferDTO List")
     @ApiResponses(value = {
@@ -40,22 +32,21 @@ public class ApplicationController {
                     + "deal ms"),
             @ApiResponse(responseCode = "400", description = "Invalid LoanApplicationRequestDTO")
     })
-    @PostMapping(" ")
+    @PostMapping("api/application")
     public ResponseEntity<List<LoanOfferDTO>> getLoanOfferDTOList(@Parameter(description = "LoanApplicationRequestDTO")
                                                                   @RequestBody
                                                                   @Valid final LoanApplicationRequestDTO dto) {
         log.info("input LoanApplicationRequestDTO: " + dto.toString());
         return ResponseEntity.ok()
-                .body(loanOfferDTOListService.getLoanOfferDTOList(dto));
+                .body(applicationService.getLoanOfferList(dto));
     }
 
     @Operation(summary = "Selecting one of the offers")
     @ApiResponse(responseCode = "200", description = "Send LoanOfferDTO in deal ms")
-    @PostMapping(OFFER)
+    @PostMapping("api/application/offer")
     public void offer(@Parameter(description = "LoanOfferDTO") @RequestBody final LoanOfferDTO dto) {
         log.info("input LoanOfferDTO: " + dto.toString());
-        log.info("send LoanOfferDTO in deal ms");
-        dealClient.offer(dto);
+        applicationService.sendOfferInDealClient(dto);
         log.info("response status OK");
     }
 }
