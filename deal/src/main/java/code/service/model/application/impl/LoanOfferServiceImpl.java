@@ -23,6 +23,7 @@ public class LoanOfferServiceImpl implements LoanOfferService {
     public LoanOffer createNewLoanOffer(LoanOfferDTO dto) {
         log.info("start createNewLoanOffer method");
         LoanOffer loanOffer = LoanOffer.builder()
+                .requestedAmount(dto.getRequestedAmount())
                 .applicationId(dto.getApplicationId())
                 .isInsuranceEnabled(dto.getIsInsuranceEnabled())
                 .isSalaryClient(dto.getIsInsuranceEnabled())
