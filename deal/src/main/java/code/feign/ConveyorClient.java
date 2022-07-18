@@ -14,9 +14,9 @@ import java.util.List;
 @FeignClient(name = "conveyor", url = "${conveyor.service.url}")
 public interface ConveyorClient {
 
-    @PostMapping("${base-url}/conveyor/offers")
+    @PostMapping("/conveyor/offers")
     ResponseEntity<List<LoanOfferDTO>> getLoanOfferDTOList(@RequestBody LoanApplicationRequestDTO dto);
 
-    @PostMapping("${base-url}/conveyor/calculation")
+    @PostMapping("/conveyor/calculation")
     ResponseEntity<CreditDTO> getCreditDTO(@RequestBody ScoringDataDTO dto);
 }

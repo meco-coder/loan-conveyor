@@ -66,7 +66,7 @@ class DealApplicationTest {
     public void testGetLoanOfferDTOList() throws Exception {
         ConveyorMocks.setupMockOffersResponse(mockConveyorService);
         final var response = testUtils
-                .perform(post("/api/deal/application")
+                .perform(post("/deal/application")
                         .contentType(APPLICATION_JSON)
                         .content(asJson(testUtils.getTestLoanApplicationRequestDTO())))
                 .andExpect(status().isOk())
@@ -87,7 +87,7 @@ class DealApplicationTest {
     public void testGetLoanOfferDTOListFail() throws Exception {
         ConveyorMocks.setupMockOffersResponseFail(mockConveyorService);
         final var response = testUtils
-                .perform(post("/api/deal/application")
+                .perform(post("/deal/application")
                         .contentType(APPLICATION_JSON)
                         .content(asJson(testUtils.getTestLoanApplicationRequestDTOFail())))
                 .andExpect(status().isBadRequest())
@@ -107,7 +107,7 @@ class DealApplicationTest {
         applicationRepository.save(testModelUtils.getApplication());
         List<Application> applications = applicationRepository.findAll();
         final var response = testUtils
-                .perform(put("/api/deal/offer")
+                .perform(put("/deal/offer")
                         .contentType(APPLICATION_JSON)
                         .content(asJson(testUtils.getTestLoanOfferDTO())))
                 .andExpect(status().isOk());
@@ -132,7 +132,7 @@ class DealApplicationTest {
         ConveyorMocks.setupMockCalculateResponse(mockConveyorService);
         List<Application> applications = applicationRepository.findAll();
         final var response = testUtils
-                .perform(put("/api/deal/calculate/{id}", applications.get(0).getId())
+                .perform(put("/deal/calculate/{id}", applications.get(0).getId())
                         .contentType(APPLICATION_JSON)
                         .content(asJson(testUtils.getFinishRegistrationRequestDTO())))
                 .andExpect(status().isOk());
@@ -145,7 +145,7 @@ class DealApplicationTest {
     public void testCalculateFail() throws Exception {
         List<Application> applications = applicationRepository.findAll();
         final var response = testUtils
-                .perform(put("/api/deal/calculate/{id}", applications.get(0).getId())
+                .perform(put("/deal/calculate/{id}", applications.get(0).getId())
                         .contentType(APPLICATION_JSON)
                         .content(asJson(testUtils.getFinishRegistrationRequestDTOFail())))
                 .andExpect(status().isBadRequest());
