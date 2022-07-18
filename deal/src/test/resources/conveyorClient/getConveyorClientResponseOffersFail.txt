@@ -1,0 +1,1 @@
+["lastName: size from 2 to 30 characters","email: invalid email","term: at least 6","amount: at least 10000","passportNumber: Need 6 numbers","passportSeries: Need 4 numbers","firstName: size from 2 to 30 characters"]

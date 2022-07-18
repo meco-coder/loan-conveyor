@@ -1,0 +1,26 @@
+{
+  "amount": "100000",
+  "term": "6",
+  "firstName": "Marina",
+  "lastName": "Ivanova",
+  "middleName": "Ivanovna",
+  "gender": "female",
+  "birthdate": "1982-11-11",
+  "passportSeries": "1111",
+  "passportNumber": "222222",
+  "passportIssueDate": "2001-01-20",
+  "passportIssueBranch": "UFMS Saratov",
+  "maritalStatus": "married",
+  "dependentAmount": "2",
+  "employment": {
+    "employmentStatus": "businessOwner",
+    "employerINN": "123123123123",
+    "salary": "50000",
+    "position": "topManager",
+    "workExperienceTotal": "16",
+    "workExperienceCurrent": "6"
+  },
+  "account": "1233123213123",
+  "isInsuranceEnabled": "false",
+  "isSalaryClient": "true"
+}

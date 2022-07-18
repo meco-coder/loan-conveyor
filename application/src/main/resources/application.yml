@@ -1,0 +1,15 @@
+server:
+  port: 8082
+
+logging:
+  level:
+    root: INFO
+    web: DEBUG
+
+deal:
+  service:
+    url: http://localhost:8081
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

@@ -1,0 +1,146 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <changeSet author="ivan (generated)" id="1658176488130-1">
+        <createTable tableName="additional_services">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="additional_servicesPK"/>
+            </column>
+            <column name="is_insurance_enabled" type="BOOLEAN"/>
+            <column name="is_salary_client" type="BOOLEAN"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ivan (generated)" id="1658176488130-2">
+        <createTable tableName="applications">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="applicationsPK"/>
+            </column>
+            <column name="creation_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="ses_code" type="VARCHAR(255)"/>
+            <column name="sign_date" type="date"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="applied_offer_id" type="BIGINT"/>
+            <column name="client_id" type="BIGINT"/>
+            <column name="credit_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ivan (generated)" id="1658176488130-3">
+        <createTable tableName="applications_status_history">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="applications_status_historyPK"/>
+            </column>
+            <column name="change_type" type="VARCHAR(255)"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="time" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="application_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ivan (generated)" id="1658176488130-4">
+        <createTable tableName="clients">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="clientsPK"/>
+            </column>
+            <column name="account" type="VARCHAR(255)"/>
+            <column name="birth_date" type="date"/>
+            <column name="dependent_amount" type="INTEGER"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="first_name" type="VARCHAR(255)"/>
+            <column name="gender" type="VARCHAR(255)"/>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="marital_status" type="VARCHAR(255)"/>
+            <column name="middle_name" type="VARCHAR(255)"/>
+            <column name="employment_id" type="BIGINT"/>
+            <column name="passport_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ivan (generated)" id="1658176488130-5">
+        <createTable tableName="credits">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="creditsPK"/>
+            </column>
+            <column name="amount" type="numeric(19, 2)"/>
+            <column name="credit_status" type="VARCHAR(255)"/>
+            <column name="monthly_payment" type="numeric(19, 2)"/>
+            <column name="psk" type="numeric(19, 2)"/>
+            <column name="rate" type="numeric(19, 2)"/>
+            <column name="term" type="INTEGER"/>
+            <column name="additional_services_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ivan (generated)" id="1658176488130-6">
+        <createTable tableName="employments">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="employmentsPK"/>
+            </column>
+            <column name="employer" type="VARCHAR(255)"/>
+            <column name="employment_status" type="VARCHAR(255)"/>
+            <column name="position" type="VARCHAR(255)"/>
+            <column name="salary" type="numeric(19, 2)"/>
+            <column name="work_experience_current" type="INTEGER"/>
+            <column name="work_experience_total" type="INTEGER"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ivan (generated)" id="1658176488130-7">
+        <createTable tableName="loan_offers">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="loan_offersPK"/>
+            </column>
+            <column name="application_id" type="BIGINT"/>
+            <column name="is_insurance_enabled" type="BOOLEAN"/>
+            <column name="is_salary_client" type="BOOLEAN"/>
+            <column name="monthly_payment" type="numeric(19, 2)"/>
+            <column name="rate" type="numeric(19, 2)"/>
+            <column name="requested_amount" type="numeric(19, 2)"/>
+            <column name="term" type="INTEGER"/>
+            <column name="total_amount" type="numeric(19, 2)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ivan (generated)" id="1658176488130-8">
+        <createTable tableName="passports">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="passportsPK"/>
+            </column>
+            <column name="passport_issue_branch" type="VARCHAR(255)"/>
+            <column name="passport_issue_date" type="date"/>
+            <column name="passport_number" type="VARCHAR(255)"/>
+            <column name="passport_series" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ivan (generated)" id="1658176488130-9">
+        <createTable tableName="payment_schedule_elements">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="payment_schedule_elementsPK"/>
+            </column>
+            <column name="date" type="date"/>
+            <column name="debt_payment" type="numeric(19, 2)"/>
+            <column name="interest_payment" type="numeric(19, 2)"/>
+            <column name="number" type="INTEGER"/>
+            <column name="remaining_debt" type="numeric(19, 2)"/>
+            <column name="total_payment" type="numeric(19, 2)"/>
+            <column name="credit_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ivan (generated)" id="1658176488130-10">
+        <addForeignKeyConstraint baseColumnNames="applied_offer_id" baseTableName="applications" constraintName="FK2740fo6eeyc37s1ky55qgpfgy" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="loan_offers" validate="true"/>
+    </changeSet>
+    <changeSet author="ivan (generated)" id="1658176488130-11">
+        <addForeignKeyConstraint baseColumnNames="additional_services_id" baseTableName="credits" constraintName="FK6ctodcrfhns3qe7ublq9x9kt6" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="additional_services" validate="true"/>
+    </changeSet>
+    <changeSet author="ivan (generated)" id="1658176488130-12">
+        <addForeignKeyConstraint baseColumnNames="credit_id" baseTableName="applications" constraintName="FK7vmbq48b3ctvr2rjyvguca93f" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="credits" validate="true"/>
+    </changeSet>
+    <changeSet author="ivan (generated)" id="1658176488130-13">
+        <addForeignKeyConstraint baseColumnNames="client_id" baseTableName="applications" constraintName="FKf0heeugoetqoqkdxmxl06ly6g" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="clients" validate="true"/>
+    </changeSet>
+    <changeSet author="ivan (generated)" id="1658176488130-14">
+        <addForeignKeyConstraint baseColumnNames="application_id" baseTableName="applications_status_history" constraintName="FKjlua6suxl7ftk8fn3w7ob75fr" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="applications" validate="true"/>
+    </changeSet>
+    <changeSet author="ivan (generated)" id="1658176488130-15">
+        <addForeignKeyConstraint baseColumnNames="credit_id" baseTableName="payment_schedule_elements" constraintName="FKpf6du6cl377ltloravlohcoj8" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="credits" validate="true"/>
+    </changeSet>
+    <changeSet author="ivan (generated)" id="1658176488130-16">
+        <addForeignKeyConstraint baseColumnNames="employment_id" baseTableName="clients" constraintName="FKrj9qhsyk6br2qf1fae49nre3a" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="employments" validate="true"/>
+    </changeSet>
+    <changeSet author="ivan (generated)" id="1658176488130-17">
+        <addForeignKeyConstraint baseColumnNames="passport_id" baseTableName="clients" constraintName="FKt1bl0t3m5aw25yqxwusroqtot" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="passports" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

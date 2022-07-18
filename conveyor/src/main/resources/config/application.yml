@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+
+base-rate: 14
+
+logging:
+  level:
+    root: INFO
+    web: DEBUG
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
