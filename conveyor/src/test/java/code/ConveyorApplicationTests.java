@@ -37,7 +37,7 @@ class ConveyorApplicationTests {
     @Test
     public void testGetLoanOfferDTOList() throws Exception {
         final var responseValidLoanApplicationRequestDTO = testUtils
-                .perform(post("/api/conveyor/offers")
+                .perform(post("/conveyor/offers")
                         .contentType(APPLICATION_JSON)
                         .content(asJson(testOfferUtils.getTestValidLoanApplicationRequestDTO())))
                 .andExpect(status().isOk())
@@ -60,7 +60,7 @@ class ConveyorApplicationTests {
     @Test
     public void testGetCreditDTO() throws Exception {
         final var responseValidScoringDataDTO = testUtils
-                .perform(post("/api/conveyor/calculation")
+                .perform(post("/conveyor/calculation")
                         .contentType(APPLICATION_JSON)
                         .content(asJson(testCalculationUtils.getTestValidScoringDataDTO())))
                 .andExpect(status().isOk())
@@ -89,7 +89,7 @@ class ConveyorApplicationTests {
     @Test
     public void testGetCreditDTO2() throws Exception {
         final var responseValidScoringDataDTO2 = testUtils
-                .perform(post("/api/conveyor/calculation")
+                .perform(post("/conveyor/calculation")
                         .contentType(APPLICATION_JSON)
                         .content(asJson(testCalculationUtils.getTestValidScoringDataDTO2())))
                 .andExpect(status().isOk())
@@ -117,7 +117,7 @@ class ConveyorApplicationTests {
     @Test
     public void testGetCreditDTOFail() throws Exception {
         final var responseInvalidScoringDataDTO = testUtils
-                .perform(post("/api/conveyor/calculation")
+                .perform(post("/conveyor/calculation")
                         .contentType(APPLICATION_JSON)
                         .content(asJson(testCalculationUtils.getTestInvalidScoringDataDTO())))
                 .andExpect(status().isBadRequest())
