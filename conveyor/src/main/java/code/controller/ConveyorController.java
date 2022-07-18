@@ -24,7 +24,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 
-@RequestMapping("${base-url}/conveyor")
+@RequestMapping("/conveyor")
 @RestController
 @Slf4j
 public class ConveyorController {

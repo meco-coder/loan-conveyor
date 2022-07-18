@@ -1,7 +1,6 @@
 server:
   port: 8080
 
-base-url: /api
 
 base-rate: 14
 
