@@ -1,8 +1,6 @@
 server:
   port: 8081
 
-base-url: /api
-
 spring:
   profiles:
     active: developer
