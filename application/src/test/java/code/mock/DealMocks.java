@@ -18,7 +18,7 @@ public class DealMocks {
                 .get("src/test/resources/dealClient/LoanOffersDTOList.json")
                 .normalize()
                 .toAbsolutePath();
-        mockService.stubFor(WireMock.post(WireMock.urlEqualTo("/api/deal/application"))
+        mockService.stubFor(WireMock.post(WireMock.urlEqualTo("/deal/application"))
                 .willReturn(WireMock.aResponse()
                         .withStatus(HttpStatus.OK.value())
                         .withHeader("Content-Type", MediaType.APPLICATION_JSON_VALUE)
@@ -27,7 +27,7 @@ public class DealMocks {
     }
 
     public static void setupMockOfferResponse(WireMockServer mockService) throws IOException {
-        mockService.stubFor(WireMock.put(WireMock.urlEqualTo("/api/deal/offer"))
+        mockService.stubFor(WireMock.put(WireMock.urlEqualTo("/deal/offer"))
                 .willReturn(WireMock.aResponse()
                         .withStatus(HttpStatus.OK.value())
                         .withHeader("Content-Type", MediaType.TEXT_PLAIN_VALUE)));

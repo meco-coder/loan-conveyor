@@ -12,9 +12,9 @@ import java.util.List;
 
 @FeignClient(name = "deal", url = "${deal.service.url}")
 public interface DealClient {
-    @PostMapping("${base-url}/deal/application")
+    @PostMapping("/deal/application")
     ResponseEntity<List<LoanOfferDTO>> getLoanOfferDTOList(@RequestBody LoanApplicationRequestDTO dto);
-    @PutMapping("${base-url}/deal/offer")
+    @PutMapping("/deal/offer")
     void offer(@RequestBody LoanOfferDTO dto);
 
 }

@@ -48,7 +48,7 @@ class ApplicationTests {
     public void testGetLoanOfferDTOList() throws Exception {
         DealMocks.setupMockApplicationResponse(mockDealService);
         final var responseValidLoanApplicationRequestDTO = testUtils
-                .perform(post("/api/application")
+                .perform(post("/application")
                         .contentType(APPLICATION_JSON)
                         .content(asJson(testApplicationUtils.getTestValidLoanApplicationRequestDTO())))
                 .andExpect(status().isOk())
@@ -70,7 +70,7 @@ class ApplicationTests {
     @Test
     public void testGetLoanOfferDTOListFail() throws Exception {
         final var responseInvalidLoanApplicationRequestDTO = testUtils
-                .perform(post("/api/application")
+                .perform(post("/application")
                         .contentType(APPLICATION_JSON)
                         .content(asJson(testApplicationUtils.getTestInvalidLoanApplicationRequestDTO())))
                 .andExpect(status().isBadRequest())
@@ -93,7 +93,7 @@ class ApplicationTests {
     public void testGetOffer() throws Exception {
         DealMocks.setupMockOfferResponse(mockDealService);
         testUtils
-                .perform(post("/api/application/offer")
+                .perform(post("/application/offer")
                         .contentType(APPLICATION_JSON)
                         .content(asJson(testApplicationUtils.getTestLoanOfferDTO())))
                 .andExpect(status().isOk())

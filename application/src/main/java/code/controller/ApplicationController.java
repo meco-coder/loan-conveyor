@@ -32,7 +32,7 @@ public class ApplicationController {
                     + "deal ms"),
             @ApiResponse(responseCode = "400", description = "Invalid LoanApplicationRequestDTO")
     })
-    @PostMapping("api/application")
+    @PostMapping("/application")
     public ResponseEntity<List<LoanOfferDTO>> getLoanOfferDTOList(@Parameter(description = "LoanApplicationRequestDTO")
                                                                   @RequestBody
                                                                   @Valid final LoanApplicationRequestDTO dto) {
@@ -43,7 +43,7 @@ public class ApplicationController {
 
     @Operation(summary = "Selecting one of the offers")
     @ApiResponse(responseCode = "200", description = "Send LoanOfferDTO in deal ms")
-    @PostMapping("api/application/offer")
+    @PostMapping("/application/offer")
     public void offer(@Parameter(description = "LoanOfferDTO") @RequestBody final LoanOfferDTO dto) {
         log.info("input LoanOfferDTO: " + dto.toString());
         applicationService.sendOfferInDealClient(dto);
