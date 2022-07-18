@@ -25,7 +25,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.List;
 
-@RequestMapping("${base-url}/deal")
+@RequestMapping("/deal")
 @RestController
 @Slf4j
 public class DealController {

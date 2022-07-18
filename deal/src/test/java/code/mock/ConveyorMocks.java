@@ -18,7 +18,7 @@ public class ConveyorMocks {
                 .get("src/test/resources/conveyorClient/getConveyorClientResponseOffers.json")
                 .normalize()
                 .toAbsolutePath();
-        mockService.stubFor(WireMock.post(WireMock.urlEqualTo("/api/conveyor/offers"))
+        mockService.stubFor(WireMock.post(WireMock.urlEqualTo("/conveyor/offers"))
                 .willReturn(WireMock.aResponse()
                         .withStatus(HttpStatus.OK.value())
                         .withHeader("Content-Type", MediaType.APPLICATION_JSON_VALUE)
@@ -31,7 +31,7 @@ public class ConveyorMocks {
                 .get("src/test/resources/conveyorClient/getConveyorClientResponseOffersFail.txt")
                 .normalize()
                 .toAbsolutePath();
-        mockService.stubFor(WireMock.post(WireMock.urlEqualTo("/api/conveyor/offers"))
+        mockService.stubFor(WireMock.post(WireMock.urlEqualTo("/conveyor/offers"))
                 .willReturn(WireMock.aResponse()
                         .withStatus(HttpStatus.BAD_REQUEST.value())
                         .withHeader("Content-Type", MediaType.TEXT_PLAIN_VALUE)
@@ -44,7 +44,7 @@ public class ConveyorMocks {
                 .get("src/test/resources/conveyorClient/getConveyorClientResponseCalculate.json")
                 .normalize()
                 .toAbsolutePath();
-        mockService.stubFor(WireMock.post(WireMock.urlEqualTo("/api/conveyor/calculation"))
+        mockService.stubFor(WireMock.post(WireMock.urlEqualTo("/conveyor/calculation"))
                 .willReturn(WireMock.aResponse()
                         .withStatus(HttpStatus.OK.value())
                         .withHeader("Content-Type", MediaType.APPLICATION_JSON_VALUE)
